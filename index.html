@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+	a.link {
+border-radius: 25px;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:300px;
+}
+
+a.link:hover, a.link:active {
+  background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+}
+        body {
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: white;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+        }
+
+        nav {
+            background-color: transparent; /* Set background to transparent */
+    	    overflow: hidden;
+background-color: rgba(21, 89, 151, 0.8); /* Updated with alpha channel for transparency */
+    background-image: linear-gradient(120deg, #155799, #159957);
+        }
+
+        nav a {
+	border-radius: 25px;
+        float: center;
+    	display: block;
+    	color: white;
+    	text-align:center;
+    	padding: 14px 100px;
+	align:center;
+    	text-decoration: none;
+    	font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: rgb(210, 210, 210);
+            color: #159957;
+        }
+
+        div {
+            border: none;
+            background-color: white;
+            padding: 15px;
+            margin: 10px;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+
+        @keyframes example {
+            0% { left: 0px; top: 0px; }
+            25% { left: 20px; top: 0px; }
+            50% { left: 20px; top: 20px; }
+            75% { left: 0px; top: 20px; }
+            100% { left: 0px; top: 0px; }
+        }
+
+        p.heading {
+            color: #159957;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        p.content {
+            color: hsl(0, 0%, 40%);
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        pre.content {
+            color: hsl(0, 0%, 40%);
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav a {
+                float: none;
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sankalp Brahmapurkar</h1>
+        <p style="color: hsl(0, 0%, 90%);">personal profile web page</p>
+    </header>
+    <nav>
+        <a href="#Home">Home</a>
+        <a href="#Achievements">Achievements</a>
+        <a href="#Favourite Blogs">Favorite Blogs</a>
+	<a href="#Skills">Skills</a>
+	<a href="#Project Portfolio">Project Portfolio</a>
+    </nav>
+<section id="Home">
+    <div>
+        <p class="heading">Sankalp Brahmapurkar</p>
+        <p class="content">Hey, I am a junior at Indian Institute of Information Technology Allahabad, planning to major in Information Technology along with a minor in Mathematics. However, I am still unsure about my specific interests in the fields of algorithms and computer science. In my spare time, I usually play chess and spend the rest of the time solving interesting questions on sites like Codeforces and CSES.</p>
+    </div>
+</section>
+<section id="Achievements"style="background-color: #f2f2f2">
+    <p class="heading">Achievements</p>
+    <pre class="content">
+        JEE Mains percentile: 99.35%
+        JEE Advanced rank: 7025
+        NTSE stage 1 Cleared
+    </pre>
+</section>
+<section id="Favourite Blogs" style="background-color: #f2f2f2">
+    <p class="heading">Favourite Blogs and Resourses about CP and DSA</p>
+    <pre class="content">
+        <a href="https://usaco.guide/dashboard" target="_blank" class="link">USACO Guide</a>
+	<a href="https://cses.fi/problemset/" target="_blank" class="link">CSES Problemset</a>
+	<a href="https://projecteuler.net/" target="_blank" class="link">Euler Project</a>
+	<a href="https://codeforces.com/blog/entry/55274" target="_blank" class="link">Codeforces-Morass Blog</a>
+	<a href="https://cp-algorithms.com/index.html" target="_blank" class="link">CP Algorithm Blogs</a>
+    </pre>
+</section>
+<section id="Skills"style="background-color: #f2f2f2">
+    <p class="heading">Skills</p>
+    <pre class="content">
+       Competitive programming
+	DSA
+	Web development
+    </pre>
+</section>
+<section id="Project Portfolio"style="background-color: #f2f2f2">
+    <p class="heading">Project Portfolio</p>
+    <pre class="content">
+       Currently working on my profile web page...
+    </pre>
+</section>
+</body>
+
+</html>
