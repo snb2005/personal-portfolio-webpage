@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Watch</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #333;
+  border-radius: 50%;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  background: #333;
+  transform-origin: 50% 100%;
+}
+
+.hour-hand {
+  height: 40px;
+  width: 6px;
+  top: 60px; /* Adjusted positioning */
+  left: 97px;
+}
+
+.minute-hand {
+  height: 60px;
+  width: 4px;
+  top: 40px;
+  left: 98px;
+}
+
+.second-hand {
+  height: 80px;
+  width: 2px;
+  top: 10%; /* Adjusted positioning */
+  left: 50%;
+  transform-origin: 50% 100%;
+  background: red;
+}
+.center-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  top: 94px;
+  left: 94px;
+}
+.hour {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transform: translate(-50%, -50%); /* Center the text */
+}
+
+#hour-3 { top: 5%; left: 50%; }
+#hour-6 { left: 5%; top: 50%; }
+#hour-9 { bottom: 5%; left: 50%; }
+#hour-12 { left: 95%; top: 50%; }
+</style>
+<script src="javascript.js"></script>
+</head>
+<body>
+  <div class="watch">
+    <div class="hour" id="hour-3">3</div>
+    <div class="hour" id="hour-6">6</div>
+    <div class="hour" id="hour-9">9</div>
+    <div class="hour" id="hour-12">12</div>
+    <div class="hour-hand" id="hour-hand"></div>
+    <div class="minute-hand" id="minute-hand"></div>
+    <div class="second-hand" id="second-hand"></div>
+    <div class="center-circle"></div>
+  </div>
+
+  <script>
+	function updateWatch() {
+  const now = new Date();
+  const hours = now.getHours() % 12; // Convert to 12-hour format
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const hourDeg = (hours + minutes / 60) * 30; // 360 degrees / 12 hours = 30 degrees per hour
+  const minuteDeg = (minutes + seconds / 60) * 6; // 360 degrees / 60 minutes = 6 degrees per minute
+  const secondDeg = seconds * 6; // 360 degrees / 60 seconds = 6 degrees per second
+
+  document.getElementById("hour-hand").style.transform = `rotate(${hourDeg}deg)`;
+  document.getElementById("minute-hand").style.transform = `rotate(${minuteDeg}deg)`;
+  document.getElementById("second-hand").style.transform = `rotate(${secondDeg}deg)`;
+}
+
+setInterval(updateWatch, 1000); // Update every second
+updateWatch(); // Initial update
+  </script>
+</body>
+</html>
